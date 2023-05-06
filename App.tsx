@@ -1,30 +1,7 @@
-import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, Text, TouchableOpacity, View } from "react-native";
-
-import styles from "./styles";
-import { Message } from "./src/components";
-import { useCallback, useState } from "react";
+import React from "react";
+import Home from "./src/screens/Home";
+import SkiaScreen from "./src/screens/SkiaScreen";
 
 export default function App() {
-  const [show, setShow] = useState(false);
-
-  const handleChangeMessageVisibility = useCallback(() => {
-    setShow((prevState) => !prevState);
-  }, [setShow]);
-
-  return (
-    <SafeAreaView style={styles.supraContainer}>
-      <View style={styles.container}>
-        {show && <Message />}
-        <TouchableOpacity
-          onPress={handleChangeMessageVisibility}
-          style={styles.button}
-        >
-          <Text style={styles.buttonText}>
-            {show ? "Fechar mensagem" : "Exibir mensagem"}
-          </Text>
-        </TouchableOpacity>
-      </View>
-    </SafeAreaView>
-  );
+  return <SkiaScreen />;
 }
