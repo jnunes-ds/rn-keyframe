@@ -28,10 +28,22 @@ export default function Message() {
     },
   });
 
+  const exitingKeyFrame = new Keyframe({
+    from: {
+      opacity: 1,
+      transform: [{ translateY: 0 }],
+    },
+    to: {
+      opacity: 0,
+      transform: [{ translateY: -100 }],
+    },
+  });
+
   return (
     <Animated.View
       style={S.container}
       entering={enteringKeyframe.duration(500)}
+      exiting={exitingKeyFrame}
     >
       <MaterialIcons name="notifications" color="#FFF" size={18} />
       <Text style={S.title}>Hello World</Text>
