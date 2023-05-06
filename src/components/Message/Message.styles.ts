@@ -7,5 +7,14 @@ export default StyleSheet.create({
     position: "absolute",
     top: 0,
     backgroundColor: "#4863F7",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "flex-end",
+    paddingBottom: 12,
+  },
+  title: {
+    color: "#FFFFFF",
+    fontSize: 16,
+    marginLeft: 7,
   },
 });
