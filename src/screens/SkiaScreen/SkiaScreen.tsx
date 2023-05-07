@@ -9,6 +9,7 @@ import {
   Paint,
   SweepGradient,
   vec,
+  BlurMask,
 } from "@shopify/react-native-skia";
 
 import S from "./SkiaScreen.styles";
@@ -30,16 +31,17 @@ function SkiaScreen() {
         start={0}
         end={180}
       />
-      <Group style="fill">
+      <Group style="stroke" strokeWidth={18}>
         <SweepGradient
           c={vec(180, 180)}
           colors={[colors.c1, colors.c2, colors.c3]}
           start={90}
           end={280}
         />
-        <Circle c={center(centerArgs)} r={25} />
-      </Group>
-      <Group style="stroke" strokeWidth={18}>
+        <BlurMask blur={25} style="inner" />
+        <Group style="fill">
+          <Circle c={center(centerArgs)} r={25} />
+        </Group>
         <Group origin={centerArgs}>
           <Oval rect={rect(50, 350, 300, 100)} />
         </Group>
